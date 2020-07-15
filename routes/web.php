@@ -2,6 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::redirect('/','UI/landing');
+Route::prefix('UI')->group(function()
+{
+    Route::get('/landing',function()
+    {
+        return view('UI.landing');
+    });
+    Route::get('/detail',function()
+    {
+        return view('UI.movie-detail');
+    });
+    Route::get('/actor',function()
+    {
+        return view('UI.movie-actor');
+    });
+});
+
 // function lol(){
 //     echo "Hello Student.";
 // }
@@ -34,10 +51,8 @@ use Illuminate\Support\Facades\Route;
 // function Sum()
 // {
 //     global $a, $b;
-
 //     $b = $a + $b;
 // } 
-
 // Sum();
 // echo $b;
 
@@ -45,10 +60,12 @@ use Illuminate\Support\Facades\Route;
 
 
 // class hee{                                 // Class Declare
-//     // public $a='a default value';           // Variable Declare
+//     // public $a='a default value';        // Variable Declare
 //     public static function harrharr()      // Method Declare
 //     {
-//         echo "Sign Board";                 // Return Text
+//         echo nl2br("Welcome Laravel\r\n");                 // Return Text
+//         echo "Welcome Laravel<br>";
+//         return "Hello World";
 //     }
 // }
 
@@ -56,8 +73,15 @@ use Illuminate\Support\Facades\Route;
 //     return "Hello World";
 // });
 
-// Route::get('/', function () {              // select(/) khan pee run yone pel
-//     echo  hee::harrharr();                 // echo classname :: methodname();
+// Route::get('/', function () {     // select(/) khan pee run yone pel
+//     // echo "HelloWorld";
+//     echo  hee::harrharr();               // echo classname :: methodname();
 //     // return view('welcome');             // return ka method htal mhr yay htr
 // });
+
+        // "files": [
+        //     "app/Function/Helpers.php"
+        // ],
+
+
 ?>
